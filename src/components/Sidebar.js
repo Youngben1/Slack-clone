@@ -14,12 +14,13 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import SidebarOption from "./SidebarOption";
 import AddIcon from "@material-ui/icons/Add";
 import { useCollection } from "react-firebase-hooks/firestore";
-import { db, auth } from "../firebase";
-import { useAuthState } from "react-firebase-hooks/auth";
+import { db } from "../firebase";
+// import { db, auth } from "../firebase";
+// import { useAuthState } from "react-firebase-hooks/auth";
 
 function SideBar() {
-    const [channels, loading, error] = useCollection(db.collection("rooms"));
-    const [user] = useAuthState(auth);
+    const [channels] = useCollection(db.collection("rooms"));
+    // const [user] = useAuthState(auth);
 
 
     return (
